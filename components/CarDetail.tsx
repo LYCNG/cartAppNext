@@ -45,7 +45,11 @@ const CarDetail = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                                      bg-white text-left shadow-sxl
                                       transition-all flex flex-col gap-5"
                                 >
-                                    <button type='button' onClick={closeModal} className="absolute top-2 right-2 z-10 w-fit p-2 bg-primary-blue-100 rounded-full">
+                                    <button
+                                        type='button'
+                                        onClick={closeModal}
+                                        className="absolute top-2 right-2 z-10 w-fit p-2 bg-primary-blue-100 rounded-full"
+                                    >
                                         <Image
                                             src='/close.svg'
                                             alt='close'
