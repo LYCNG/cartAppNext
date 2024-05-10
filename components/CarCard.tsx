@@ -1,6 +1,6 @@
 'use client'
 import { CarProps } from "@/types";
-import { calculateCarRent } from "@/utils";
+import { calculateCarRent, generateCarImageUrl } from "@/utils";
 import Image from 'next/image';
 import { useState } from "react";
 import CarDetail from "./CarDetail";
@@ -16,7 +16,7 @@ const CarCard = ({ car }: CarCardProps) => {
   const carRent = calculateCarRent(city_mpg, year);
 
   const [isOpen, setIsOpen] = useState(false);
-
+  console.log(generateCarImageUrl(car, 'angle'))
   return (
     <div className="car-card group">
       <div className="car-card_content">
@@ -33,7 +33,7 @@ const CarCard = ({ car }: CarCardProps) => {
       </p>
 
       <div className="relative w-full h-40 my-3 object-contain">
-        <Image src='/hero.png' className="object-contain" alt='car model' fill priority />
+        <Image src={generateCarImageUrl(car, 'angle')} className="object-contain" alt='car model' fill priority />
       </div>
 
       <div className="relative flex w-full mt-2">
